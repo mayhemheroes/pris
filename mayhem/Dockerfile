@@ -1,5 +1,5 @@
 FROM ghcr.io/evanrichter/cargo-fuzz as builder
-RUN apt update && apt install fonts-cantarell libcairo2-dev libharfbuzz-dev librsvg2-dev
+RUN apt update && apt install fonts-cantarell libcairo2-dev libharfbuzz-dev librsvg2-dev -y
 
 ADD . /pris
 WORKDIR /pris/fuzz
