@@ -1,0 +1,6 @@
+project: pris
+target: pris-fuzz
+
+cmds:
+    - cmd: ./pris-fuzz
+      libfuzzer: true
