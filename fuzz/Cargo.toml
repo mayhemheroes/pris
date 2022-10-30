@@ -1,0 +1,26 @@
+[package]
+name = "pris-fuzz"
+version = "0.0.0"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.pris]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "pris-fuzz"
+path = "fuzz_targets/pris-fuzz.rs"
+test = false
+doc = false
