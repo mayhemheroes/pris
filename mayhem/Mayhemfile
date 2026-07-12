@@ -1,0 +1,16 @@
+project: pris
+
+# The lexer+parser libFuzzer harness (ported from the original mayhemheroes integration,
+# now hosted additively in mayhem/fuzz/).
+target: pris-fuzz
+
+cmds:
+    # libFuzzer binary; Mayhem feeds inputs on stdin/corpus (no @@).
+    - cmd: /mayhem/pris-fuzz
+      libfuzzer: true
+
+# Seeds: the upstream examples/*.pris corpus (canonical two-entry form — server tar +
+# the per-target local path).
+testsuite:
+    - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+    - file://mayhem/pris-fuzz/testsuite

@@ -1,0 +1,16 @@
+{
+  font_family = "Cantarell"
+  font_style = "Regular"
+  color = #440000
+  put t("Déjà vu garçon koffie") at (0.1w, 0.1w + font_size)
+
+  color = #ff0000
+  put line((0w, font_size)) at (0.1w, 0.1w)
+
+  font_family = "Linux Libertine"
+  color = #000044
+  put t("Déjà vu garçon koffie") at (0.1w, 0.1w + 2 * font_size)
+
+  color = #0000ff
+  put line((0w, font_size)) at (0.1w, 0.1w + font_size)
+}
